@@ -6,6 +6,8 @@ import './Styles/Global.css'
 import Login from './Containers/Login/Login';
 import Register from './Containers/Register/Register';
 import UsersTabla from './api/id';
+import Dashboard from './Components/Dashboard';
+import Ban from './Components/Ban';
 
 
 
@@ -15,11 +17,13 @@ function App() {
     <BrowserRouter>
     <Routes>
 
-    <Route path="/" element={<Home/>}/>
-    <Route path="/login" element={<Login/>}/>
-    <Route path="/register" element={<Register/>}/>
-    <Route path="/admin" element={<UsersTabla/>}/>
+    <Route path="/" element={localStorage.getItem('rol') === "ban" ? <Ban/> : <Home/>}/>
+    <Route path="/dashboard"   element={localStorage.getItem('token') ?  <Dashboard/> : <Login/>}/>
+    <Route path="/login" element={localStorage.getItem('rol') === "ban" ? <Ban/> : <Login/>}/>
+    <Route path="/register" element={localStorage.getItem('rol') === "ban" ? <Ban/> : <Register/>}/>
+    <Route path="/admin" element={localStorage.getItem('rol') === "admin"  ? <UsersTabla/> : <Home/>}/>
 
+  
 
 
   

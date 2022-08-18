@@ -14,7 +14,7 @@ const Login = () => {
     const navigate = useNavigate();
   
     const { username, contraseña } = inputs;
-  
+      
     const HandleChange = (e) => {
       setInputs({ ...inputs, [e.target.name]: e.target.value });
     };
@@ -34,7 +34,11 @@ const Login = () => {
             setMensaje(data.mensaje);
             setTimeout(() => {
               setMensaje("");
-              localStorage.setItem("token", data?.usuario.token);
+              localStorage.setItem("token", data?.usuario.token);{
+              localStorage.setItem("rol", data?.usuario.rol);
+              console.log(data)
+            }
+      
               navigate(`/dashboard`);
             }, 2000);
           })

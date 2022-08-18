@@ -3,7 +3,8 @@ function Modal ({ closeModal, Delete }) {
 
     return(
         
-<div id="popup-modal" tabindex="-1" class=" absolute inset-0 z-50 flex items-center justify-center">
+<div id="popup-modal" tabindex="-1" class=" absolute inset-0 z-50 flex items-center justify-center
+">
     <div class="relative p-4 w-full max-w-md h-full md:h-auto">
         <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
             <button type="button" class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="popup-modal">
