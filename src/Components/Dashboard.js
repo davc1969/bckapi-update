@@ -16,6 +16,8 @@ const Dashboard = () => {
     const rol = localStorage.getItem("rol")
 
     function Bye(){
+        localStorage.removeItem('token')
+        localStorage.removeItem('rol')
         navigate('/login')
     }
 
