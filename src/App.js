@@ -18,7 +18,7 @@ function App() {
     <Routes>
 
     <Route path="/" element={localStorage.getItem('rol') === "ban" ? <Ban/> : <Home/>}/>
-    <Route path="/dashboard"   element={localStorage.getItem('token') ?  <Dashboard/> : <Login/>}/>
+    <Route path="/dashboard" element={localStorage.getItem('token') ?  <Dashboard/> : <Login/>}/>
     <Route path="/login" element={localStorage.getItem('rol') === "ban" ? <Ban/> : <Login/>}/>
     <Route path="/register" element={localStorage.getItem('rol') === "ban" ? <Ban/> : <Register/>}/>
     <Route path="/admin" element={localStorage.getItem('rol') === "admin"  ? <UsersTabla/> : <Home/>}/>

@@ -1,9 +1,13 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import {  useParams } from "react-router-dom";
+import {  useParams,  useNavigate } from "react-router-dom";
 import ButtonLogout from "./ButtonLogout";
 
+
 const Dashboard = () => {
+
+   
+    const navigate = useNavigate();
     
     const [username, setUsername] = useState();
     
@@ -11,13 +15,17 @@ const Dashboard = () => {
     const token = localStorage.getItem("token");
     const rol = localStorage.getItem("rol")
 
+    function Bye(){
+        navigate('/login')
+    }
+
 
     
 
   useEffect(() => {
     if (token) {
       axios
-        .get(`http://localhost:4000/user`, {
+        .get(`https://39fa-190-247-42-95.sa.ngrok.io/user`, {
           headers: {
             token: token,
             rol: rol
@@ -43,7 +51,7 @@ const Dashboard = () => {
 
         <div class="mt-8 text-center">
             <img src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp" alt="" class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"/>
-            <h5 class="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{username ? ` ${username}` : "Que estas haceindo?"}</h5>
+            <h5 class="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{username ? ` ${username}` : Bye()}</h5>
             <span class="hidden text-gray-400 lg:block">{rol}</span>
         </div>
 
