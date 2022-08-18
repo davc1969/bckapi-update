@@ -34,3 +34,9 @@ body {
   float: left;
   margin-left: 1600px;
 }
+
+
+.code-user{
+  background-color: rgba(102, 102, 102, 0.534);
+  border-radius: 7%;
+}

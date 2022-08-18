@@ -22,6 +22,7 @@ function Delete(username) {
   .then((data) => data)
   .then(window.location.reload())
   localStorage.removeItem('token')
+
  
 
 
@@ -89,8 +90,11 @@ let i = 1;
                     <button onClick={() => {
                   setOpenModal(true)
                 }} href="#" class="font-medium text-blue-600 dark:text-red-500 hover:underline">Eliminar</button>
-             {openModal && <Modal Delete={() => Delete(item.username)} closeModal={setOpenModal}/>}
+             {openModal && <Modal username={item.username} Delete={() => Delete(item.username)}  closeModal={setOpenModal}/>}
+           
                 </td>
+                
+                
            
             </tr>
             

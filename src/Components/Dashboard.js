@@ -1,17 +1,16 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
+import ButtonLogout from "./ButtonLogout";
 
 const Dashboard = () => {
     
     const [username, setUsername] = useState();
-    const navigate = useNavigate()
-    const token = localStorage.getItem("token");
+    
 
-   function Destroy()  {
-    localStorage.removeItem('token')
-    navigate('/login')
-   }
+    const token = localStorage.getItem("token");
+    const rol = localStorage.getItem("rol")
+
 
     
 
@@ -21,12 +20,13 @@ const Dashboard = () => {
         .get(`http://localhost:4000/user`, {
           headers: {
             token: token,
+            rol: rol
           },
         })
         .then(({ data }) => setUsername(data.username))
         .catch((error) => console.error(error));
     }
-  }, [token]);
+  }, [token, rol]);
 
    
   return(
@@ -44,7 +44,7 @@ const Dashboard = () => {
         <div class="mt-8 text-center">
             <img src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp" alt="" class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"/>
             <h5 class="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{username ? ` ${username}` : "Que estas haceindo?"}</h5>
-            <span class="hidden text-gray-400 lg:block"></span>
+            <span class="hidden text-gray-400 lg:block">{rol}</span>
         </div>
 
         <ul class="space-y-2 tracking-wide mt-8">
@@ -97,16 +97,10 @@ const Dashboard = () => {
         </ul>
     </div>
 
-    <div class="px-6 -mx-6 pt-4 flex justify-between items-center border-t">
-        <button onClick={() => Destroy()}
-        class="px-4 py-3 flex items-center space-x-4 rounded-md text-gray-600 group">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-            </svg>
-            <span class="group-hover:text-gray-700">Logout</span>
-        </button>
-    </div>
+    <ButtonLogout/>
+
 </aside>
+ 
 <div class="ml-auto mb-6 lg:w-[75%] xl:w-[80%] 2xl:w-[85%]">
     <div class="sticky z-10 top-0 h-16 border-b bg-white lg:py-2.5">
         <div class="px-6 flex items-center justify-between space-x-4 2xl:container">
