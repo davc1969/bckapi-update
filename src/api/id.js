@@ -22,6 +22,15 @@ function Delete(username) {
   .then((data) => data)
   .then(window.location.reload())
   localStorage.removeItem('token')
+ if(localStorage.getItem('rol') === "user") {
+  localStorage.removeItem('token', 'rol')
+ }else{
+  return false
+
+  
+    
+    
+ }
 
  
 
