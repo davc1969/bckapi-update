@@ -13,7 +13,7 @@ const UsersTabla = () => {
   const navigate = useNavigate();
 
 function Delete(username) {
-  fetch(`https://3fcb-190-247-42-95.sa.ngrok.io/delete?username=${username}`, {
+  fetch(`https://39fa-190-247-42-95.sa.ngrok.io/delete?username=${username}`, {
     method: "GET"
   })
 
@@ -30,7 +30,7 @@ let i = 1;
 
   useEffect(() => {
     const callAPI = () => {
-      fetch("https://3fcb-190-247-42-95.sa.ngrok.io/", {
+      fetch("  https://39fa-190-247-42-95.sa.ngrok.io/", {
         method: "GET"
       })
         .then((res) => res.json())
