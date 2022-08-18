@@ -52,7 +52,7 @@ const Dashboard = () => {
         </div>
 
         <div class="mt-8 text-center">
-            <img src="https://tailus.io/sources/blocks/stats-cards/preview/images/second_user.webp" alt="" class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"/>
+            <img src="https://i.pinimg.com/originals/91/82/d2/9182d2a11c0dfb04e01e780bf8e258bc.png" alt="" class="w-10 h-10 m-auto rounded-full object-cover lg:w-28 lg:h-28"/>
             <h5 class="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{username ? ` ${username}` : `Que estas haciendo?`}</h5>
             <span class="hidden text-gray-400 lg:block">{rol}</span>
         </div>
