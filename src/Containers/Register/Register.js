@@ -29,7 +29,7 @@ const Register = () => {
         };
         setLoading(true);
         await axios
-        .post("http://localhost:4000/register", Usuario)
+        .post("https://39fa-190-247-42-95.sa.ngrok.io/register", Usuario)
           .then((res) => {
             const { data } = res;
             setMensaje(data.mensaje);

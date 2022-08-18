@@ -28,7 +28,7 @@ const Login = () => {
         };
         setLoading(true);
         await axios
-          .post("http://localhost:4000/login", Usuario)
+          .post("https://39fa-190-247-42-95.sa.ngrok.io/login ", Usuario)
           .then((res) => {
             const { data } = res;
             setMensaje(data.mensaje);
@@ -39,6 +39,7 @@ const Login = () => {
               console.log(data)
             }
       
+              
               navigate(`/dashboard`);
             }, 2000);
           })
