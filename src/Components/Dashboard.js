@@ -9,6 +9,10 @@ const Dashboard = () => {
    
     const navigate = useNavigate();
 
+    if(!sessionStorage) {
+        navigate('/login')
+    }
+
    if(!localStorage.getItem("token")){
     localStorage.removeItem('token')
     navigate('/login')
