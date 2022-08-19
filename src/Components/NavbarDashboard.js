@@ -35,7 +35,7 @@ const NavbarDashboard = () => {
   useEffect(() => {
     if (token) {
       axios
-        .get(`https://39fa-190-247-42-95.sa.ngrok.io/user`, {
+        .get(`https://7a8e-190-247-42-95.sa.ngrok.io/user`, {
           headers: {
             token: token,
             rol: rol,
