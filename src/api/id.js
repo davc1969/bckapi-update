@@ -59,6 +59,9 @@ let i = 1;
                     Rol
                 </th>
                 <th scope="col" class="py-3 px-6">
+                    Licencia
+                </th>
+                <th scope="col" class="py-1 px-6">
                     Status
                 </th>
                 <th scope="col" class="py-3 px-6">
@@ -80,7 +83,12 @@ let i = 1;
                     {item.rol}
                 </td>
                 <td class="py-4 px-6">
-                    ✔
+               {item.licencia ? ` ${item.licencia}` : `no tiene`}
+               
+                </td>
+                <td class="py-4 px-6">
+               ✔
+               
                 </td>
                 <td class="py-4 px-6 text-right">
 
@@ -89,9 +97,10 @@ let i = 1;
                 }} href="#" class="font-medium text-blue-600 dark:text-red-500 hover:underline">Eliminar</button>
              {openModal && <Modal username={item.username} Delete={() => Delete(item.username)}  closeModal={setOpenModal}/>}
            
+           
                 </td>
                 
-                
+              
            
             </tr>
             
