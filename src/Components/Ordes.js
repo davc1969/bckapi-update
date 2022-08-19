@@ -29,7 +29,7 @@ const Ordes = () => {
          <div class="w-full px-4">
             <div class="text-center mx-auto mb-[60px] lg:mb-20max-w-[510px]">
                <span class="font-semibold text-lg text-primary mb-2 block">
-               Table de Precios
+               Tabla de Precios
                </span>
                <h2
                   class="
