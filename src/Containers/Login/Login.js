@@ -36,6 +36,7 @@ const Login = () => {
               setMensaje("");
               localStorage.setItem("token", data?.usuario.token);{
               localStorage.setItem("rol", data?.usuario.rol);
+             
               console.log(data)
             }
       

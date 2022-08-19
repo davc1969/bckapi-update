@@ -8,6 +8,7 @@ import Register from './Containers/Register/Register';
 import UsersTabla from './api/id';
 import Dashboard from './Components/Dashboard';
 import Ban from './Components/Ban';
+import Ordes from './Components/Ordes'
 
 
 
@@ -21,7 +22,9 @@ function App() {
     <Route path="/dashboard" element={localStorage.getItem('token') ?  <Dashboard/> : <Login/>}/>
     <Route path="/login" element={localStorage.getItem('rol') === "ban" ? <Ban/> : <Login/>}/>
     <Route path="/register" element={localStorage.getItem('rol') === "ban" ? <Ban/> : <Register/>}/>
-    <Route path="/admin" element={localStorage.getItem('rol') === "admin"  ? <UsersTabla/> : <Home/>}/>
+    <Route path="/admin" element={localStorage.getItem('rol') === "admin"  ? <UsersTabla/> : <Ban/>}/>
+    <Route path="/ordenes" element={localStorage.getItem('rol') === "ban" ? <Ban/> : <Ordes/>}/>
+
 
   
 
